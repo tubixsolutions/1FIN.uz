@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=1" />
+    <title>1fin</title>
+    <meta name="description" content="1fin" />
+    <meta property="og:title" content="1fin" />
+    <meta property="og:image" content="./assets/images/share.png" />
+    <meta name="twitter:image" content="./assets/images/share.png" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/mainlogo.png"
+      type="image/x-icon" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
+      integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <!-- styles -->
+    <link rel="stylesheet" href="./global.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <link media="all" rel="stylesheet" href="/build.css" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./Swiper-index.js" defer></script>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./responsive.css" />
+  </head>
+
+  <body class="mobileS:overflow-hidden">
+    <div class="FakeScroll"></div>
+    <div class="gl"></div>
+    <div class="Voile"></div>
+    <!-- <a href="tel:+998990085049" class="telefon-raqam-anchor">+998990085049</a>         -->
+
+    <div class="Menu" data-component="Menu">
+      <nav>
+        <a id="lang_about" href="/works" data-id="Work"
+          data-route="work">Bizning xizmatlar</a>
+        <a id="lang_work" href="/about" data-id="About" data-route="about">Biz
+          haqimizda</a>
+        <a
+          class="selected"
+          href="/"
+          data-id="Home"
+          data-route="home"
+          alt="home"
+          title="home">
+          <span class="Menu-invisible">Home</span>
+          <span class="gg-symbol gg-symbol--disc"></span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="Container">
+      <div class="Content">
+        <div
+          class="px-width-padding-sm md:px-width-padding-md xl:px-width-padding-lg mb-margin-sm xl:mb-margin-lg logo">
+          <img
+            src="./assets/images/mainlogo.png"
+            alt
+            width="80px"
+            class="min-[320]: mb-10 mt-[-50] ml-2" />
+          <div class="Menu_top">
+            <div class="Menu_lang">
+              <form class="tabber">
+                <label for="t1">Uz</label>
+                <input
+                  id="t1"
+                  name="language"
+                  type="radio"
+                  value="uz"
+                  checked />
+                <label for="t2">Pус</label>
+                <input id="t2" name="language" type="radio" value="ru" />
+                <div class="blob"></div>
+              </form>
+            </div>
+            <div class="Menu_contact">
+              <a href="tel:+998555187007" class="Menu_phone">
+                <i class="fa-solid fa-phone"></i>
+                <span>+998 55 518 70 07</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <section
+          class="carousel grid grid-cols-12 mb-margin-sm md:grid-section-md xl:grid-section-lg gap-x-row-gap-sm md:gap-x-row-gap-md lg:gap-x-row-gap-lg items-center relative">
+          <button
+            class="carousel-prev absolute bottom-[-18px] md:bottom-auto md:top-[43%] left-[10px] text-neutrals-light-grey-14 dark:text-neutrals-light-white z-10"
+            aria-label="Go back to previous slide">
+            <svg
+              width="50"
+              height="50"
+              version="2.0"
+              class="w-[20px] md:w-[50px] fill-neutrals-light-grey-14 dark:fill-neutrals-light-white drop-shadow-[0_0_5px_rgb(255,255,255)] dark:drop-shadow-[0_0_5px_rgb(0,0,0)]">
+              <use href="#chevron-left-regular" />
+            </svg>
+          </button>
+          <button
+            class="carousel-next absolute bottom-[-18px] md:bottom-auto md:top-[43%] right-[10px] text-neutrals-light-grey-14 dark:text-neutrals-light-white z-10"
+            aria-label="Move to next slide">
+            <svg
+              width="50"
+              height="50"
+              version="2.0"
+              class="w-[20px] md:w-[50px] fill-neutrals-light-grey-14 dark:fill-neutrals-light-white drop-shadow-[0_0_5px_rgb(255,255,255)] dark:drop-shadow-[0_0_5px_rgb(0,0,0)]">
+              <use href="#chevron-right-regular" />
+            </svg>
+          </button>
+          <figure
+            class="h-[275px] md:h-[369px] lg:h-[580px] laptop:h-[500px] bg-cover lazyload"
+            data-bg="./assets/images/L-1.jpg">
+            <figcaption
+              class="md:w-[46%] lg:w-[36%] self-center md:ml-[60px] lg:ml-[108px]">
+              <h2 class="title"></h2>
+              <br />
+              <p class="body"></p>
+              <a class="link" href="#" target="_blank"> </a>
+            </figcaption>
+          </figure>
+          <figure
+            class="h-[275px] md:h-[369px] lg:h-[580px] bg-cover lazyload"
+            data-bg="./assets/images/L-2.jpg"
+            data-bg-dark="./assets/images/L-2.jpg">
+            <figcaption
+              class="md:w-[46%] lg:w-[36%] self-center md:ml-[60px] lg:ml-[108px]">
+              <h2 class="title"></h2>
+              <p class="body"></p>
+              <a class="link" href="#" target="_blank"> </a>
+            </figcaption>
+          </figure>
+          <figure
+            class="h-[275px] md:h-[369px] lg:h-[580px] bg-cover lazyload"
+            data-bg="./assets/images/L-3.jpg">
+            <figcaption
+              class="md:w-[46%] lg:w-[36%] self-center md:ml-[60px] lg:ml-[108px]">
+              <h2 class="title"></h2>
+              <p class="body"></p>
+              <a class="link" href="#" target="_blank"> </a>
+            </figcaption>
+          </figure>
+          <!-- <figure
+            class="h-[275px] md:h-[369px] lg:h-[580px] bg-cover lazyload"
+            data-bg="./assets/images/L-4.png"
+          >
+            <figcaption
+              class="md:w-[46%] lg:w-[36%] self-center md:ml-[60px] lg:ml-[108px]"
+            >
+              <h2 class="title"></h2>
+              <p class="body"></p>
+              <a
+                class="link group hover:underline w-fit flex items-center font-body-1-strong text-brand-purple-primary dark:text-brand-purple-tint-20"
+                href="#"
+                target="_blank"
+              >
+              </a>
+            </figcaption>
+          </figure>
+          <figure
+            class="h-[275px] md:h-[369px] lg:h-[580px] bg-cover lazyload"
+            data-bg="./assets/images/L-5.jpg"
+          >
+            <figcaption
+              class="md:w-[46%] lg:w-[36%] self-center md:ml-[60px] lg:ml-[108px]"
+            >
+              <h2 class="title"></h2>
+              <p class="body"></p>
+              <a class="link" href="#" target="_blank"> </a>
+            </figcaption>
+          </figure> -->
+          <div class="mobile-fig-caption block md:hidden">
+            <h2 class="title"></h2>
+            <p class="body font-open font-body-1 mb-4"></p>
+            <a class="link group" href target="_blank"> </a>
+          </div>
+          <button
+            class="controller hidden mt-4 col-start-6 col-end-8 justify-self-center">
+            <svg
+              id="pause"
+              class="dark:fill-neutrals-light-white"
+              aria-label="Pause"
+              width="24"
+              height="24">
+              <use href="#pause-button" />
+            </svg>
+            <svg
+              id="play"
+              class="hidden"
+              aria-label="Play"
+              width="24"
+              height="24">
+              <use href="#play-button" />
+            </svg>
+          </button>
+        </section>
+        <div class="Section Home" data-component="Home">
+          <div class="Home-content About">
+            <div class="About-content">
+              <h2
+                id="lang_aboutUS"
+                class="uppercase text-center text-white text-neutrals-dark-grey-8 dark:text-white font-large-title-sm md:font-large-title-md xl:font-large-title-lg mb-8">
+                Biz haqimizda
+              </h2>
+              <section class="cards1-wrapper thesectionabout">
+                <div class="cards-wrap2">
+                  <div class="for-gradient-card1">
+                    <div class="cards1-card1">
+                      <div class="c1-c1-image">
+                        <img src="images/company-svgrepo-com.svg" alt />
+                      </div>
+                      <h2 id="lang_card-title1">1FIN qanday kompaniya?</h2>
+                      <p id="lang_card1" class="mobileS:text-[10px]">
+                        1FIN O‘zbekistondagi yetakchi kompaniyalardan biri
+                        bo‘lib, buxgalteriya xizmatlarining to‘liq qamrovini,
+                        soliq va yuridik maslahatlar, moliyaviy konsalting va
+                        biznes jarayonlari autsorsingini taqdim etishga
+                        ixtisoslashgan.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="for-gradient-card2">
+                    <div class="cards1-card1 gradiented-2">
+                      <div class="c1-c1-image">
+                        <img src="images/skills-svgrepo-com.svg" alt />
+                      </div>
+                      <h2 id="lang_card-title2">Nimalar taklif qilamiz?</h2>
+                      <p id="lang_card2">
+                        Mutaxassislarimiz buxgalteriya hisobi sohasida katta
+                        amaliy tajribaga, shuningdek, soliq maslahati bo'yicha
+                        tajribaga ega. Biz iqtisodiyotning turli tarmoqlaridagi
+                        barcha so'nggi o'zgarishlarni doimiy ravishda kuzatib
+                        boramiz va bu biznesga qanday ta'sir qilishi haqida o'z
+                        ekspert fikrimizni taklif qilamiz.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards-wrap2">
+                  <div class="for-gradient-card3">
+                    <div class="cards1-card1">
+                      <div class="c1-c1-image">
+                        <img
+                          src="images/superman-flying-svgrepo-com.svg"
+                          alt />
+                      </div>
+                      <h2 id="lang_card-title3">Qanday tajribaga ega?</h2>
+                      <p id="lang_card3">
+                        1FIN O'zbekiston bozorida o'z faoliyatini yaqinda
+                        boshlagan. Yaqinda boshlaganiga qaramay o'z jamoasining
+                        chuqur bilimi, tajribasi, malakasi, mas'uliyati va
+                        ishonchliligi tufayli kompaniya raqobatchilarga nisbatan
+                        arzon narxlari va yuqori sifatli xizmatlar tufayli
+                        bozorda o'z nomini yaratishga muvaffaq bo'ldi. Kompaniya
+                        tezda mashhurlikka erishmoqda va mavjud bo'lgan davrda
+                        buxgalteriya xizmatlari bozorida muvaffaqiyatli faoliyat
+                        yuritib kelmoqda.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="for-gradient-card4">
+                    <div class="cards1-card1">
+                      <div class="c1-c1-image">
+                        <img
+                          src="images/translation-2-svgrepo-com.svg"
+                          alt />
+                      </div>
+                      <h2 id="lang_card-title4">Sifati qanday?</h2>
+                      <p id="lang_card4">
+                        Bizning ishimizning eng muhim tamoyillari -
+                        ko'rsatilayotgan xizmatlarning yuqori sifati, mutlaq
+                        maxfiylik va ishning tez bajarilishi. Biz zamonaviy
+                        biznes texnologiyalaridan foydalanamiz va xizmatlarimiz
+                        sifatini doimiy ravishda oshiramiz.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="Arrow"
+              data-component="Arrow"
+              data-ref="arrow"
+              style="height: 900px; margin-top: 50px"></div>
+          </div>
+        </div>
+        <div class="main-container relative overflow-hidden">
+          <div id="cookie-banner"></div>
+          <div class="header-primary">
+            <div
+              id="headerArea"
+              class="uhf"
+              data-m='{"cN":"headerArea","cT":"Area_coreuiArea","id":"a1Body","sN":1,"aN":"Body"}'>
+              <div
+                id="headerRegion"
+                data-region-key="headerregion"
+                data-m='{"cN":"headerRegion","cT":"Region_coreui-region","id":"r1a1","sN":1,"aN":"a1"}'>
+                <div
+                  id="headerUniversalHeader"
+                  data-m='{"cN":"headerUniversalHeader","cT":"Module_coreui-universalheader","id":"m1r1a1","sN":1,"aN":"r1a1"}'
+                  data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+                  <div
+                    data-m='{"cN":"cookiebanner_cont","cT":"Container","id":"c1m1r1a1","sN":1,"aN":"m1r1a1"}'>
+                    <div id="uhfCookieAlert" data-locale="en-us">
+                      <div id="msccBannerV2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- shu yerda defot swpier -->
+          <div class="grid grid-cols-6 pt-vert-gap-sm md:pt-0 md:grid-cols-12">
+            <div
+              id="culture-selector"
+              class="col-span-6 md:col-span-4 lg:col-span-3 self-center ml-[28px] md:ml-[10px] xl:ml-width-padding-lg">
+              <div class="flex flex-wrap gap-y-1 opacity-0">
+                <div class="flex items-center d-flex align-items-center">
+                  <button
+                    aria-label="Change Theme"
+                    class="border border-neutrals-light-grey-38 w-[0px] ml-1 rounded-pill rounded-lg toggler dark:border-neutrals-additionals-grey-12 dark:gradients-dark-theme-multi-color-gradients-text-graphic-elements-only-purple-magenta"></button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-span-6 md:col-span-8 lg:col-span-9 dark:bg-neutrals-additionals-grey-12">
+              <div
+                id="footerArea"
+                class="uhf"
+                data-m='{"cN":"footerArea","cT":"Area_coreuiArea","id":"a2Body","sN":2,"aN":"Body"}'>
+                <div
+                  id="footerRegion"
+                  data-region-key="footerregion"
+                  data-m='{"cN":"footerRegion","cT":"Region_coreui-region","id":"r1a2","sN":1,"aN":"a2"}'>
+                  <div
+                    id="footerUniversalFooter"
+                    data-m='{"cN":"footerUniversalFooter","cT":"Module_coreui-universalfooter","id":"m1r1a2","sN":1,"aN":"r1a2"}'
+                    data-module-id="Category|footerRegion|coreui-region|footerUniversalFooter|coreui-universalfooter">
+                    <script id="uhf-footer-ccpa">
+                      const globalPrivacyControlEnabled =
+                        navigator.globalPrivacyControl;
+
+                      const GPC_DataSharingOptIn = globalPrivacyControlEnabled
+                        ? false
+                        : checkThirdPartyAdsOptOutCookie();
+
+                      function checkThirdPartyAdsOptOutCookie() {
+                        try {
+                          const ThirdPartyAdsOptOutCookieName = "3PAdsOptOut";
+                          var cookieValue = getCookie(
+                            ThirdPartyAdsOptOutCookieName
+                          );
+                          return cookieValue != 1;
+                        } catch {
+                          return true;
+                        }
+                      }
+
+                      function getCookie(cookieName) {
+                        var cookieValue = document.cookie.match(
+                          "(^|;)\\s*" + cookieName + "\\s*=\\s*([^;]+)"
+                        );
+                        return cookieValue ? cookieValue[2] : "";
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section Work" data-component="Work">
+          <div class="Work-content text-center">
+            <h3 id="lang_service">Bizning xizmatlar</h3>
+            <section>
+              <div class="our-work">
+                <div class="our-work-wrapper">
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service1">Buxgalteriya hisobini yuritish</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service2">Buxgalteriya hisobini tiklash</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service3">
+                      Buxgalteriya hisob siyosatini tayyorlash
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service4">Buxgalteriyani tahlil qilish</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service5">
+                      Buxgalteriya hisobini avtomatlashtirish uchun uslubiy
+                      yordam
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service6">
+                      Buxgalteriya hisobini optimallashtirish
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service7">
+                      Buxgalteriyan hisobi bo'yicha maslahatlar berish
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service8">Ish haqini hisoblash</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service9">
+                      Elektron hujjat aylanmasini amalga oshirish
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service10">
+                      Soliq va Statistika hisobotlarni tayyorlash va topshirish
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left" id="lang_service11">
+                    <p id="lang_service11">Moliyaviy hisobotlarni tayyorlash</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service12">
+                      Hisobotlarni BHMS dan XMHS ga o'tkazish
+                    </p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service13">XMHS asosida hisob yurutish</p>
+                  </div>
+                  <div class="ow-card" data-aos="fade-left">
+                    <p id="lang_service14">
+                      XMHS asosida hisob yurutish bo'yicha maslahat
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div
+              class="Arrow arrow-service"
+              data-component="Arrow"
+              data-ref="arrow"></div>
+          </div>
+        </div>
+
+        <div class="client-wrapper">
+          <h1 id="lang_partner">BIZNING HAMKORLAR</h1>
+          <div id="Carousel-slider" class="slider-partner">
+            <section class="hello-swiper mt-[-184px]">
+              <div class="Carousel-slider">
+                <div class="slider-item superHero1" data-href="#"></div>
+                <div class="slider-item superHero2" data-href="#"></div>
+                <div class="slider-item superHero3" data-href="#"></div>
+                <div class="slider-item superHero4" data-href="#"></div>
+                <div class="slider-item superHero5" data-href="#"></div>
+                <div class="slider-item superHero6" data-href="#"></div>
+                <div class="slider-item superHero7" data-href="#"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="order-item__body">
+            <div class="order-item__left">
+              <div class="order-item__left-top" id="lang_contact">
+                <h3 class="order-item__title h2">
+                  Barcha savollaringizga javob beramiz<small>va hal qilishga
+                    yordam beramiz. Siz bilan hamkorlik
+                    qilganimizdan mamnunmiz!</small>
+                </h3>
+              </div>
+              <div class="order-item__left-bottom">
+                <div class="order-item__work">
+                  <div class="order-item__work-online">Online</div>
+                  <div class="order-item__work-box" id="lang_time">
+                    <div class="order-item__work-time">
+                      Ish vaqti: 09:00 - 18:00
+                    </div>
+                    <div class="order-item__work-value">
+                      (dam olish kunlari bundan mustasno)
+                    </div>
+                  </div>
+                </div>
+                <div class="order-item__profile">
+                  <div class="order-item__profile-avatar img-contain">
+                    <img
+                      width="112"
+                      height="112"
+                      alt
+                      data-src="./assets/images/mainlogo.png"
+                      class="lazyload"
+                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img
+                        width="112"
+                        height="112"
+                        alt
+                        data-src="./assets/images/mainlogo.png"
+                        class="lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img
+                          width="112"
+                          height="112"
+                          alt
+                          data-src="../images/mainlogo.png"
+                          class="lazyload"
+                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img
+                            width="112"
+                            height="112"
+                            src="./assets/images/mainlogo.png"
+                            alt /></noscript></noscript>
+                    </noscript>
+                  </div>
+                  <div class="order-item__profile-box">
+                    <div class="order-item__profile-name">1FIN</div>
+                    <div class="order-item__profile-value" id="lang_footer">
+                      Buxgalteriya xizmatlari
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-item__right">
+              <div class="order-item__bottom">
+                <div class="order-item__caption" id="lang_callMe">
+                  Bizga qo'ng'iroq qiling:
+                </div>
+                <a href="tel:+91 152 80 79" class="order-item__phone">+(998)
+                  55-518-7007</a>
+                <div class="order-item__desc" id="lang_callInput">
+                  Yoki telefon raqamingizni qoldiring va biz sizga imkon qadar
+                  tezroq qo'ng'iroq qilamiz.
+                </div>
+                <form
+                  method="post"
+                  action="./index.html"
+                  class="order-item__form form--js">
+                  <input
+                    type="text"
+                    class="order-item__field field phone-mask"
+                    placeholder="+998"
+                    name="field-number"
+                    autocomplete="off"
+                    required
+                    value="+998" />
+                  <button class="order-item__btn btn">
+                    <span id="lang_btn"> Menga qo'ng'iroq qiling </span>
+                  </button>
+                  <div class="order-item__form-desc" id="lang_privacy">
+                    Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta
+                    ishlashga rozilik berasiz.
+                    <a href="#" class="policy--js"> Privacy Policy</a>.
+                  </div>
+                  <input type="hidden" name="subject" value="Перезвоните мне" />
+                  <input
+                    type="hidden"
+                    name="thank"
+                    value="en/thanks-for-the-application-time" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="tub">
+          <div class="wrapper-r">
+            <div class="tubix-section">
+              <div class="ts-left">
+                <div class="contact">
+                  <h1 id="lang_contactText">Kontakt</h1>
+                  <a href="tel:+998555187007">
+                    <i class="fa-solid fa-phone text-green-900 mr-2"></i>
+                    +(998) 55-518-7007
+                  </a>
+                  <a href="mailto:onefin.uz@gmail.com">
+                    <i class="fa-solid fa-envelope text-blue-400 mr-2"></i>
+                    onefin.uz@gmail.com
+                  </a>
+                </div>
+                <div class="onefin-sm-wrapper">
+                  <h1 id="lang_socialMedia">Ijtimoiy tarmoqlarimiz</h1>
+                  <div class="ofw-wrapper">
+                    <a
+                      target="_blank"
+                      href="https://t.me/ifin_uz"
+                      class="social_wrapper flex items-center justify-center w-[50px] h-[50px] bg-white rounded-md">
+                      <i
+                        class="fa-brands fa-telegram text-[#0088cc] text-[26px]"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/1fin.uz"
+                      class="social_wrapper flex items-center justify-center w-[50px] h-[50px] bg-white rounded-md">
+                      <i
+                        class="fa-brands fa-instagram text-red-800 text-[26px]"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/profile.php?id=100095380572957"
+                      class="social_wrapper flex items-center justify-center w-[50px] h-[50px] bg-white rounded-md">
+                      <i
+                        class="fa-brands fa-facebook text-[#1877f2] text-[26px]"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="ts-right">
+                <h2 id="lang_address">
+                  <i
+                    class="fa-solid fa-location-dot text-red-900 mr-2 text-[20px]"></i>
+                  Toshkent shahar, Yakkasaroy tumani, Rakatboshi mahallasi
+                  <br />
+                  O'rikzor ko'chasi 7-uy, Rakatboshi Biznes Center 202-xona
+                </h2>
+                <div class="ts-video">
+                  <iframe
+                    class="video_frame"
+                    width="500"
+                    height="250"
+                    src="https://www.youtube.com/embed/KMIa57fv7Ao?si=vz-5BfqcZMXpDV4d"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="ts-address-video-invalid">
+            <button>
+              <img src="./assets/images/closenbtnn.png" alt="close" />
+            </button>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/KMIa57fv7Ao?si=vz-5BfqcZMXpDV4d"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div> -->
+        </section>
+        <div class="footer-line"></div>
+      </div>
+    </div>
+
+    <div
+      class="Loader"
+      data-component="Loader"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #19252b;
+        z-index: 10;
+      ">
+      <div class="gg">
+        <div class="Loader-scaler">
+          <div
+            class="gg-symbol gg-symbol--rect gg-symbol--9 gg-symbol--gradient"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let playBtn = document.querySelector(".ts-video button");
+      let theVideoContent = document.querySelector(".ts-address-video-invalid");
+
+      playBtn.addEventListener("click", () => {
+        theVideoContent.classList.add("ts-address-video");
+        theVideoContent.classList.remove("ts-address-video-invalid");
+
+        let button = document
+          .querySelector(".ts-address-video button")
+          .addEventListener("click", () => {
+            theVideoContent.classList.remove("ts-address-video");
+            theVideoContent.classList.add("ts-address-video-invalid");
+          });
+      });
+    </script>
+    <script src="/critical.js"></script>
+    <script src="./language.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-35394000-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-35394000-1");
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/ScrollToPlugin.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "slide",
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        mousewheel: {
+          invert: true,
+        },
+        keyboard: true,
+        speed: 500,
+        spaceBetween: 20,
+        slidesPerView: 2,
+        autoplay: 2500,
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            direction: "horizontal",
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
+    <script src="/build.js"></script>
+    <script src="./js-s.js" defer></script>
+    <script src="./js-s2.js" defer></script>
+    <script src="./js-s3.js" defer></script>
+    <!-- Begin of Chaport Live Chat code -->
+    <script type="text/javascript">
+      (function (w, d, v3) {
+        w.chaportConfig = {
+          appId: "65e55e04eaefeb097080be25",
+        };
+
+        if (w.chaport) return;
+        v3 = w.chaport = {};
+        v3._q = [];
+        v3._l = {};
+        v3.q = function () {
+          v3._q.push(arguments);
+        };
+        v3.on = function (e, fn) {
+          if (!v3._l[e]) v3._l[e] = [];
+          v3._l[e].push(fn);
+        };
+        var s = d.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://app.chaport.com/javascripts/insert.js";
+        var ss = d.getElementsByTagName("script")[0];
+        ss.parentNode.insertBefore(s, ss);
+      })(window, document);
+    </script>
+    <!-- End of Chaport Live Chat code -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/micro-slider@1.0.9/dist/micro-slider.min.js"></script>
+    <script src="./script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+  </body>
+</html>
