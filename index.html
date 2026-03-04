@@ -781,29 +781,7 @@
     <script src="./js-s3.js" defer></script>
     <!-- Begin of Chaport Live Chat code -->
     <script type="text/javascript">
-      (function (w, d, v3) {
-        w.chaportConfig = {
-          appId: "65e55e04eaefeb097080be25",
-        };
-
-        if (w.chaport) return;
-        v3 = w.chaport = {};
-        v3._q = [];
-        v3._l = {};
-        v3.q = function () {
-          v3._q.push(arguments);
-        };
-        v3.on = function (e, fn) {
-          if (!v3._l[e]) v3._l[e] = [];
-          v3._l[e].push(fn);
-        };
-        var s = d.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://app.chaport.com/javascripts/insert.js";
-        var ss = d.getElementsByTagName("script")[0];
-        ss.parentNode.insertBefore(s, ss);
-      })(window, document);
+      
     </script>
     <!-- End of Chaport Live Chat code -->
     <script
@@ -819,36 +797,81 @@
       });
     </script>
     <style>
-.telegram-button{
+<style>
+.telegram-widget{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 width:60px;
 height:60px;
-background:#2f7fd1;
+background:#2AABEE;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 6px 20px rgba(0,0,0,0.25);
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
 cursor:pointer;
 z-index:9999;
-animation:pulse 2s infinite;
+transition:0.3s;
 }
 
-.telegram-button img{
+.telegram-widget:hover{
+transform:scale(1.1);
+}
+
+.telegram-widget img{
 width:30px;
 }
 
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(47,127,209,0.6);}
-70%{box-shadow:0 0 0 15px rgba(47,127,209,0);}
-100%{box-shadow:0 0 0 0 rgba(47,127,209,0);}
+.telegram-popup{
+position:fixed;
+bottom:95px;
+right:25px;
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+font-family:Arial;
+width:220px;
+display:none;
+z-index:9999;
+}
+
+.telegram-popup a{
+display:block;
+background:#2AABEE;
+color:white;
+padding:10px;
+border-radius:6px;
+text-align:center;
+margin-top:10px;
+text-decoration:none;
 }
 </style>
 
-<a href="https://t.me/oneFin_01" target="_blank" class="telegram-button">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+    <div class="telegram-popup" id="telegramPopup">
+Savolingiz bormi?<br>
+Telegram orqali yozing 👇
+<a href="https://t.me/oneFin_01" target="_blank">
+Telegramga yozish
 </a>
+</div>
+
+
+<div class="telegram-widget" onclick="toggleTelegram()">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</div>
+
+
+<script>
+function toggleTelegram(){
+var x=document.getElementById("telegramPopup");
+if(x.style.display==="block"){
+x.style.display="none";
+}else{
+x.style.display="block";
+}
+}
+</script>
   </body>
 </html>
