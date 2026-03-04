@@ -433,7 +433,7 @@
                   </div>
                   <div class="ow-card" data-aos="fade-left">
                     <p id="lang_service7">
-                      Buxgalteriya hisobi bo'yicha maslahatlar berish
+                      Buxgalteriyan hisobi bo'yicha maslahatlar berish
                     </p>
                   </div>
                   <div class="ow-card" data-aos="fade-left">
@@ -549,7 +549,7 @@
                   <div class="order-item__profile-box">
                     <div class="order-item__profile-name">1FIN</div>
                     <div class="order-item__profile-value" id="lang_footer">
-                      Buxgalteriya va audit xizmatlari
+                      Buxgalteriya xizmatlari
                     </div>
                   </div>
                 </div>
@@ -644,7 +644,7 @@
                     class="fa-solid fa-location-dot text-red-900 mr-2 text-[20px]"></i>
                   Toshkent shahar, Yakkasaroy tumani, Rakatboshi mahallasi
                   <br />
-                  O'rikzor ko'chasi 7-uy, Rakatboshi Biznes Markazi
+                  O'rikzor ko'chasi 7-uy, Rakatboshi Biznes Center 202-xona
                 </h2>
                 <div class="ts-video">
                   <iframe
@@ -781,7 +781,29 @@
     <script src="./js-s3.js" defer></script>
     <!-- Begin of Chaport Live Chat code -->
     <script type="text/javascript">
-      
+      (function (w, d, v3) {
+        w.chaportConfig = {
+          appId: "65e55e04eaefeb097080be25",
+        };
+
+        if (w.chaport) return;
+        v3 = w.chaport = {};
+        v3._q = [];
+        v3._l = {};
+        v3.q = function () {
+          v3._q.push(arguments);
+        };
+        v3.on = function (e, fn) {
+          if (!v3._l[e]) v3._l[e] = [];
+          v3._l[e].push(fn);
+        };
+        var s = d.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://app.chaport.com/javascripts/insert.js";
+        var ss = d.getElementsByTagName("script")[0];
+        ss.parentNode.insertBefore(s, ss);
+      })(window, document);
     </script>
     <!-- End of Chaport Live Chat code -->
     <script
@@ -796,81 +818,5 @@
         duration: 1200,
       });
     </script>
-    <style>
-.telegram-widget{
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;
-height:60px;
-background:#2AABEE;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
-cursor:pointer;
-z-index:9999999;
-transition:0.3s;
-}
-
-.telegram-widget:hover{
-transform:scale(1.1);
-}
-
-.telegram-widget img{
-width:30px;
-}
-
-.telegram-popup{
-position:fixed;
-bottom:95px;
-right:25px;
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-font-family:Arial;
-width:220px;
-display:none;
-z-index:9999;
-}
-
-.telegram-popup a{
-display:block;
-background:#2AABEE;
-color:white;
-padding:10px;
-border-radius:6px;
-text-align:center;
-margin-top:10px;
-text-decoration:none;
-}
-</style>
-
-    <div class="telegram-popup" id="telegramPopup">
-Savolingiz bormi?<br>
-Telegram orqali yozing 👇
-<a href="https://t.me/oneFin_01" target="_blank">
-Telegramga yozish
-</a>
-</div>
-
-
-<div class="telegram-widget" onclick="toggleTelegram()">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-</div>
-
-
-<script>
-function toggleTelegram(){
-var x=document.getElementById("telegramPopup");
-if(x.style.display==="block"){
-x.style.display="none";
-}else{
-x.style.display="block";
-}
-}
-</script>
   </body>
 </html>
