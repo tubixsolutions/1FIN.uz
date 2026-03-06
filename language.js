@@ -36,6 +36,12 @@ const lang_privacy = document.querySelector("#lang_privacy")
 const lang_address = document.querySelector("#lang_address")
 const lang_socialMedia = document.querySelector("#lang_socialMedia")
 const lang_contactText = document.querySelector("#lang_contactText")
+const lang_toast_title = document.querySelector("#lang_toast_title")
+const lang_toast_desc = document.querySelector("#lang_toast_desc")
+const lang_service_type_placeholder = document.querySelector("#lang_service_type_placeholder")
+const lang_service_type_opt_accounting = document.querySelector("#lang_service_type_opt_accounting")
+const lang_service_type_opt_audit = document.querySelector("#lang_service_type_opt_audit")
+const lang_service_type_opt_consulting = document.querySelector("#lang_service_type_opt_consulting")
 
 const data = {
     uz: [{
@@ -101,9 +107,7 @@ const data = {
 
 
 
-lang_form.addEventListener('change', (e) => {
-    let language = e.target.value
-
+function applyLanguage(language) {
     if (language === "uz") {
         lang_about.innerHTML = data.uz[0].about
         lang_work.innerHTML = data.uz[0].work
@@ -153,6 +157,12 @@ lang_form.addEventListener('change', (e) => {
         lang_privacy.innerHTML = `
             Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik berasiz <a href="#" class="policy--js"> Privacy Policy</a>.
         `
+        if (lang_toast_title) lang_toast_title.innerHTML = "Yuborildi"
+        if (lang_toast_desc) lang_toast_desc.innerHTML = "So‘rovingiz qabul qilindi. Tez orada bog‘lanamiz."
+        if (lang_service_type_placeholder) lang_service_type_placeholder.innerHTML = "Xizmatlar turini tanlang"
+        if (lang_service_type_opt_accounting) lang_service_type_opt_accounting.innerHTML = "Buxgalteriya"
+        if (lang_service_type_opt_audit) lang_service_type_opt_audit.innerHTML = "Audit"
+        if (lang_service_type_opt_consulting) lang_service_type_opt_consulting.innerHTML = "Konsalting"
         lang_address.innerHTML = `
             <i class="fa-solid fa-location-dot text-red-900 mr-2 text-[20px]"></i>
             Toshkent shahar, Yakkasaroy tumani, Rakatboshi mahallasi <br /> 
@@ -209,6 +219,12 @@ lang_form.addEventListener('change', (e) => {
         lang_privacy.innerHTML = `
         Нажимая кнопку, вы соглашаетесь на обработку персональных данных <a href="#" class="policy--js">Политика конфиденциальности</a>.
         `
+        if (lang_toast_title) lang_toast_title.innerHTML = "Отправлено"
+        if (lang_toast_desc) lang_toast_desc.innerHTML = "Ваша заявка принята. Мы свяжемся с вами в ближайшее время."
+        if (lang_service_type_placeholder) lang_service_type_placeholder.innerHTML = "Выберите услугу"
+        if (lang_service_type_opt_accounting) lang_service_type_opt_accounting.innerHTML = "Бухгалтерия"
+        if (lang_service_type_opt_audit) lang_service_type_opt_audit.innerHTML = "Аудит"
+        if (lang_service_type_opt_consulting) lang_service_type_opt_consulting.innerHTML = "Консалтинг"
         lang_address.innerHTML = `
             <i class="fa-solid fa-location-dot text-red-900 mr-2 text-[20px]"></i>
             г.Ташкент, Яккасарайский район, микрорайон Ракатбоши <br />
@@ -216,4 +232,24 @@ lang_form.addEventListener('change', (e) => {
         lang_socialMedia.innerHTML = "Наши социальные сети"
         lang_contactText.innerHTML = "Контакт"
     }
-})
+}
+
+if (lang_form) {
+    lang_form.addEventListener('change', (e) => {
+        let language = e.target.value
+        try {
+            window.localStorage.setItem('language', language)
+        } catch (err) {}
+        applyLanguage(language)
+    })
+
+    let initialLanguage = lang_form.value || 'uz'
+    try {
+        const savedLanguage = window.localStorage.getItem('language')
+        if (savedLanguage) {
+            initialLanguage = savedLanguage
+        }
+    } catch (err) {}
+
+    applyLanguage(initialLanguage)
+}
