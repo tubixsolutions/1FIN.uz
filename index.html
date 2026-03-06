@@ -11,9 +11,6 @@
     <meta property="og:title" content="1fin" />
     <meta property="og:image" content="./assets/images/share.png" />
     <meta name="twitter:image" content="./assets/images/share.png" />
-    <meta name="description" content="1FIN buxgalteriya xizmatlari. Buxgalteriya yuritish, audit, soliq hisobotlari va konsalting xizmatlari.">
-<meta name="keywords" content="buxgalteriya xizmatlari, audit, soliq, бухгалтерия ташкент">
-<meta name="robots" content="index, follow">
     <link
       rel="shortcut icon"
       href="./assets/images/mainlogo.png"
@@ -49,8 +46,8 @@
     <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./Swiper-index.js" defer></script>
-    <link rel="stylesheet" href="/index.css">
-    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./responsive.css" />
   </head>
 
   <body class="mobileS:overflow-hidden">
@@ -61,12 +58,13 @@
 
     <div class="Menu" data-component="Menu">
       <nav>
-        <a id="lang_about" href="#works" data-id="Work"
+        <a id="lang_about" href="/works" data-id="Work"
           data-route="work">Bizning xizmatlar</a>
-        <a id="lang_work" href="/#about" class="side-text">Biz haqimizda</a>
+        <a id="lang_work" href="/about" data-id="About" data-route="about">Biz
+          haqimizda</a>
         <a
           class="selected"
-          href="index.html"
+          href="/"
           data-id="Home"
           data-route="home"
           alt="home"
@@ -82,7 +80,6 @@
         <div
           class="px-width-padding-sm md:px-width-padding-md xl:px-width-padding-lg mb-margin-sm xl:mb-margin-lg logo">
           <img
-          loading="lazy"  
             src="./assets/images/mainlogo.png"
             alt
             width="80px"
@@ -235,7 +232,7 @@
                       <div class="c1-c1-image">
                         <img src="images/company-svgrepo-com.svg" alt />
                       </div>
-                      <h2 id="About">1FIN qanday kompaniya?</h2>
+                      <h2 id="lang_card-title1">1FIN qanday kompaniya?</h2>
                       <p id="lang_card1" class="mobileS:text-[10px]">
                         1FIN O‘zbekistondagi yetakchi kompaniyalardan biri bo‘lib, 
                         buxgalteriya xizmatlarining to‘liq qamrovini, soliq va yuridik maslahatlar, 
@@ -249,9 +246,10 @@
                       <div class="c1-c1-image">
                         <img src="images/skills-svgrepo-com.svg" alt />
                       </div>
-                      <h2 id="lang_card-title2">Nimalarni taklif qilamiz?</h2>
+                      <h2 id="lang_card-title2">Nimalar taklif qilamiz?</h2>
                       <p id="lang_card2">
-                        Mutaxassislarimiz buxgalteriya hisobi sohasida hamda soliq maslahati bo'yicha katta amaliy tajribaga ega.
+                        Mutaxassislarimiz buxgalteriya hisobi sohasida katta amaliy tajribaga, 
+                        shuningdek, soliq maslahati bo'yicha tajribaga ega.
                         <br>
                         -Buxgalteriya hisobini yuritish
                         <br>
@@ -274,13 +272,17 @@
                           src="images/superman-flying-svgrepo-com.svg"
                           alt />
                       </div>
-                      <h2 id="lang_card-title3">Tajriba</h2>
+                      <h2 id="lang_card-title3">Qanday tajribaga ega?</h2>
                       <p id="lang_card3">
-                        1FIN — buxgalteriya va audit xizmatlari sohasida professional yechimlar taqdim etuvchi kompaniya.
-                        Tajribali mutaxassislar jamoasi, chuqur bilim va mas’uliyatli yondashuv tufayli kompaniya mijozlariga 
-                        shonchli va sifatli xizmat ko‘rsatadi. 1FIN o‘z mijozlariga yuqori sifatli xizmatlar bilan bir
-                        qatorda raqobatbardosh va maqbul narx siyosatini ham taklif etadi. Ishonchlilik,
-                        aniqlik va samaradorlik kompaniya faoliyatining asosiy tamoyillaridir.
+                        1FIN O'zbekiston bozorida o'z faoliyatini yaqinda
+                        boshlagan. Yaqinda boshlaganiga qaramay o'z jamoasining
+                        chuqur bilimi, tajribasi, malakasi, mas'uliyati va
+                        ishonchliligi tufayli kompaniya raqobatchilarga nisbatan
+                        arzon narxlari va yuqori sifatli xizmatlar tufayli
+                        bozorda o'z nomini yaratishga muvaffaq bo'ldi. Kompaniya
+                        tezda mashhurlikka erishmoqda va mavjud bo'lgan davrda
+                        buxgalteriya xizmatlari bozorida muvaffaqiyatli faoliyat
+                        yuritib kelmoqda.
                       </p>
                     </div>
                   </div>
@@ -291,7 +293,7 @@
                           src="images/translation-2-svgrepo-com.svg"
                           alt />
                       </div>
-                      <h2 id="lang_card-title4">Sifat</h2>
+                      <h2 id="lang_card-title4">Sifati qanday?</h2>
                       <div v-html="cardDesc2"></div>
                       <p id="lang_card4">
                         Bizning ishimizning eng muhim tamoyillari -
@@ -400,7 +402,7 @@
 
         <div class="Section Work" data-component="Work">
           <div class="Work-content text-center">
-            <h3 id="work">Bizning xizmatlar</h3>
+            <h3 id="lang_service">Bizning xizmatlar</h3>
             <section>
               <div class="our-work">
                 <div class="our-work-wrapper">
@@ -431,7 +433,7 @@
                   </div>
                   <div class="ow-card" data-aos="fade-left">
                     <p id="lang_service7">
-                      Buxgalteriya hisobi bo'yicha maslahatlar berish
+                      Buxgalteriyan hisobi bo'yicha maslahatlar berish
                     </p>
                   </div>
                   <div class="ow-card" data-aos="fade-left">
@@ -444,7 +446,7 @@
                   </div>
                   <div class="ow-card" data-aos="fade-left">
                     <p id="lang_service10">
-                      Soliq va Statistika hisobotlarini tayyorlash va topshirish
+                      Soliq va Statistika hisobotlarni tayyorlash va topshirish
                     </p>
                   </div>
                   <div class="ow-card" data-aos="fade-left" id="lang_service11">
@@ -502,7 +504,7 @@
                 <h3 class="order-item__title h2">
                   Barcha savollaringizga javob beramiz<small>va hal qilishga
                     yordam beramiz. Siz bilan hamkorlik
-                    qilishimizdan mamnunmiz!</small>
+                    qilganimizdan mamnunmiz!</small>
                 </h3>
               </div>
               <div class="order-item__left-bottom">
@@ -547,7 +549,7 @@
                   <div class="order-item__profile-box">
                     <div class="order-item__profile-name">1FIN</div>
                     <div class="order-item__profile-value" id="lang_footer">
-                      Buxgalteriya va audit xizmatlari
+                      Buxgalteriya xizmatlari
                     </div>
                   </div>
                 </div>
@@ -564,35 +566,20 @@
                   Yoki telefon raqamingizni qoldiring va biz sizga imkon qadar
                   tezroq qo'ng'iroq qilamiz.
                 </div>
-                <form id="leadForm" class="contact-form">
-
-<input
-type="tel"
-id="phone"
-value="+998 "
-required
-oninvalid="this.setCustomValidity('Telefon raqamingizni kiriting')"
-oninput="this.setCustomValidity('')"
->
-
-
-<select id="service">
-
-<option value="Buxgalteriya">
-Buxgalteriya xizmati
-</option>
-
-<option value="Audit">
-Audit xizmati
-</option>
-
-</select>
-
-<button type="submit" class="call-btn">
-Menga qo'ng'iroq qiling
-</button>
-
-</form>
+                <form
+                  method="post"
+                  action="./index.html"
+                  class="order-item__form form--js">
+                  <input
+                    type="text"
+                    class="order-item__field field phone-mask"
+                    placeholder="+998"
+                    name="field-number"
+                    autocomplete="off"
+                    required
+                    value="+998" />
+                  <button class="order-item__btn btn">
+                    <span id="lang_btn"> Menga qo'ng'iroq qiling </span>
                   </button>
                   <div class="order-item__form-desc" id="lang_privacy">
                     Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta
@@ -614,7 +601,7 @@ Menga qo'ng'iroq qiling
             <div class="tubix-section">
               <div class="ts-left">
                 <div class="contact">
-                  <h1 id="lang_contactText">Aloqa uchun</h1>
+                  <h1 id="lang_contactText">Kontakt</h1>
                   <a href="tel:+998555187007">
                     <i class="fa-solid fa-phone text-green-900 mr-2"></i>
                     +(998) 55-518-7007
@@ -657,35 +644,37 @@ Menga qo'ng'iroq qiling
                     class="fa-solid fa-location-dot text-red-900 mr-2 text-[20px]"></i>
                   Toshkent shahar, Yakkasaroy tumani, Rakatboshi mahallasi
                   <br />
-                  O'rikzor ko'chasi 7-uy, Rakatboshi Biznes Markazi
+                  O'rikzor ko'chasi 7-uy, Rakatboshi Biznes Center 202-xona
                 </h2>
-                <iframe
-<iframe
-src="https://yandex.com/map-widget/v1/?ll=69.245601%2C41.293965&z=17&pt=69.245601,41.293965,pm2rdm"
-width="420"
-height="220"
-style="border:0;border-radius:12px;margin-top:15px;"
-loading="lazy">
-</iframe>
+                <div class="ts-video">
+                  <iframe
+                    class="video_frame"
+                    width="500"
+                    height="250"
+                    src="https://www.youtube.com/embed/KMIa57fv7Ao?si=vz-5BfqcZMXpDV4d"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
-          <div class="video-section">
-
-<h2>Ofis joylashuvi</h2>
-
-<div class="video-frame">
-
-<iframe
-src="https://www.youtube.com/embed/KMIa57fv7Ao?rel=0&modestbranding=1"
-title="1FIN joylashuvi"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
+          <!-- <div class="ts-address-video-invalid">
+            <button>
+              <img src="./assets/images/closenbtnn.png" alt="close" />
+            </button>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/KMIa57fv7Ao?si=vz-5BfqcZMXpDV4d"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div> -->
         </section>
         <div class="footer-line"></div>
       </div>
@@ -792,7 +781,29 @@ allowfullscreen>
     <script src="./js-s3.js" defer></script>
     <!-- Begin of Chaport Live Chat code -->
     <script type="text/javascript">
-      
+      (function (w, d, v3) {
+        w.chaportConfig = {
+          appId: "65e55e04eaefeb097080be25",
+        };
+
+        if (w.chaport) return;
+        v3 = w.chaport = {};
+        v3._q = [];
+        v3._l = {};
+        v3.q = function () {
+          v3._q.push(arguments);
+        };
+        v3.on = function (e, fn) {
+          if (!v3._l[e]) v3._l[e] = [];
+          v3._l[e].push(fn);
+        };
+        var s = d.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://app.chaport.com/javascripts/insert.js";
+        var ss = d.getElementsByTagName("script")[0];
+        ss.parentNode.insertBefore(s, ss);
+      })(window, document);
     </script>
     <!-- End of Chaport Live Chat code -->
     <script
@@ -807,206 +818,5 @@ allowfullscreen>
         duration: 1200,
       });
     </script>
-<style>
-
-.telegram-widget{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:9999;
-font-family:Arial;
-}
-
-.telegram-button{
-width:60px;
-height:60px;
-background:#229ED9;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-box-shadow:0 6px 20px rgba(0,0,0,0.25);
-animation:pulse 2s infinite;
-}
-
-.telegram-button img{
-width:28px;
-}
-
-.telegram-popup{
-position:absolute;
-bottom:75px;
-right:0;
-background:white;
-color:#222;
-padding:15px;
-border-radius:10px;
-box-shadow:0 6px 20px rgba(0,0,0,0.25);
-width:220px;
-display:none;
-}
-
-.telegram-popup a{
-display:block;
-margin-top:10px;
-background:#229ED9;
-color:white;
-padding:10px;
-border-radius:6px;
-text-align:center;
-text-decoration:none;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(34,158,217,0.7)}
-70%{box-shadow:0 0 0 12px rgba(34,158,217,0)}
-100%{box-shadow:0 0 0 0 rgba(34,158,217,0)}
-}
-
-</style>
-
-
-
-<div class="telegram-widget">
-
-<div class="telegram-popup" id="tgPopup">
-
-Savolingiz bormi?<br>
-<b>Telegram orqali yozing</b>
-
-<a href="https://t.me/oneFin_01?text=Salom%20saytingizdan%20yozyapman" target="_blank">
-Telegramga yozish
-</a>
-
-</div>
-
-
-<div class="telegram-button" onclick="toggleTelegram()">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-
-</div>
-
-</div>
-
-
-
-<script>
-
-function toggleTelegram(){
-
-var x=document.getElementById("tgPopup");
-
-if(x.style.display==="block"){
-x.style.display="none";
-}else{
-x.style.display="block";
-}
-
-}
-
-</script>
-<script>
-function loadVideo(el){
-el.innerHTML =
-'<iframe width="100%" height="315" src="https://www.youtube.com/embed/KMIa57fv7Ao?autoplay=1" frameborder="0" allowfullscreen></iframe>';
-}
-</script>
-<script>
-
-const TOKEN = "8358495427:AAHKn4UBAet6MlDfdxzXV3KjQlfgvnSwPlAEN";
-const CHAT_ID = "-1003728048777";
-
-document.getElementById("leadForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const phone = document.getElementById("phone").value;
-const service = document.getElementById("service").value;
-
-const message =
-`📞 Yangi mijoz
-
-Telefon: ${phone}
-Xizmat: ${service}
-`;
-
-fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-chat_id:CHAT_ID,
-text:message
-})
-});
-
-alert("Rahmat! Tez orada siz bilan bog'lanamiz.");
-
-});
-<script src="https://unpkg.com/imask"></script>
-
-</script>
-<script src="https://unpkg.com/imask"></script>
-
-<script>
-
-var phoneMask = IMask(
-document.getElementById('phone'),
-{
-mask: '+{998} 00 000 00 00'
-});
-
-</script>
-<script>
-
-const TOKEN = "8358495427:AAHKn4UBAet6MlDfdxzXV3KjQlfgvnSwPlA";
-const CHAT_ID = "-1003728048777";
-
-document.getElementById("leadForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const phone = document.getElementById("phone").value;
-const service = document.getElementById("service").value;
-
-const time = new Date().toLocaleString("uz-UZ");
-
-const message =
-`🔥 Yangi mijoz
-
-📞 Telefon: ${phone}
-📊 Xizmat: ${service}
-
-🌐 Sayt: 1fin.uz
-🕒 Vaqt: ${time}
-`;
-
-fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-chat_id:CHAT_ID,
-text:message
-})
-})
-
-.then(res => res.json())
-.then(data=>{
-alert("Rahmat! Tez orada siz bilan bog'lanamiz.");
-})
-
-.catch(err=>{
-alert("Xatolik yuz berdi");
-});
-
-});
-
-</script>
   </body>
 </html>
-<!-- update -->
