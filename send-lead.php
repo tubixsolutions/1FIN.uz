@@ -10,7 +10,7 @@ if (is_file($envPath) && is_readable($envPath)) {
     if (is_array($lines)) {
         foreach ($lines as $line) {
             $line = trim($line);
-            if ($line === '' || str_starts_with($line, '#')) {
+            if ($line === '' || substr($line, 0, 1) === '#') {
                 continue;
             }
 
@@ -26,10 +26,9 @@ if (is_file($envPath) && is_readable($envPath)) {
                 continue;
             }
 
-            if (
-                (str_starts_with($value, '"') && str_ends_with($value, '"')) ||
-                (str_starts_with($value, "'") && str_ends_with($value, "'"))
-            ) {
+            $first = substr($value, 0, 1);
+            $last = substr($value, -1);
+            if (($first === '"' && $last === '"') || ($first === "'" && $last === "'")) {
                 $value = substr($value, 1, -1);
             }
 
@@ -86,7 +85,7 @@ $serviceLabel = $serviceMap[$serviceType] ?? $serviceType;
 $time = date('Y-m-d H:i:s');
 
 $phoneDigits = preg_replace('/\D+/', '', $phone);
-if (str_starts_with($phoneDigits, '998')) {
+if (substr($phoneDigits, 0, 3) === '998') {
     $phoneDigits = substr($phoneDigits, 3);
 }
 $phoneDigits = substr($phoneDigits, 0, 9);
