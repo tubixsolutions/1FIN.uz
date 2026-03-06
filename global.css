@@ -4148,3 +4148,153 @@ video {
     display: block;
   }
 }
+.video-section{
+margin-top:40px;
+text-align:center;
+}
+
+.video-section h2{
+color:white;
+margin-bottom:20px;
+}
+
+.video-frame{
+max-width:700px;
+margin:auto;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-frame iframe{
+width:100%;
+height:380px;
+border:0;
+}
+#leadForm{
+display:flex;
+gap:10px;
+margin-top:15px;
+align-items:center;
+}
+
+#leadForm input{
+background:#ffffff;
+border-radius:8px;
+border:none;
+padding:12px 15px;
+width:180px;
+font-size:14px;
+}
+
+#leadForm select{
+background:#ffffff;
+border-radius:8px;
+border:none;
+padding:12px;
+font-size:14px;
+cursor:pointer;
+color:#111;
+}
+
+#leadForm button{
+background:linear-gradient(90deg,#3a7cff,#6a5cff);
+border:none;
+padding:12px 20px;
+border-radius:8px;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+#leadForm button:hover{
+transform:scale(1.05);
+}
+#leadForm input{
+background:#ffffff;
+border-radius:10px;
+border:none;
+padding:14px 16px;
+width:200px;
+font-size:15px;
+color:#111;        /* MUHIM - yozuv rangi */
+font-weight:500;
+}
+
+#leadForm input::placeholder{
+color:#777;
+}
+#leadForm select{
+background:#ffffff;
+border-radius:10px;
+border:none;
+padding:14px 16px;
+width:200px;
+font-size:15px;
+color:#111;
+cursor:pointer;
+}
+#leadForm button{
+background:linear-gradient(90deg,#4b7cff,#6c63ff);
+border:none;
+padding:14px 22px;
+border-radius:12px;
+color:white;
+font-weight:600;
+font-size:15px;
+cursor:pointer;
+white-space:nowrap;   /* MUHIM */
+transition:0.3s;
+}
+
+#leadForm button:hover{
+transform:scale(1.05);
+}
+#leadForm{
+display:flex;
+gap:12px;
+align-items:center;
+margin-top:15px;
+}
+#leadForm{
+display:flex;
+gap:12px;
+align-items:center;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+#leadForm input,
+#leadForm select,
+#leadForm button{
+height:48px;
+border-radius:10px;
+}
+
+#leadForm input{
+width:200px;
+padding:0 16px;
+background:#fff;
+color:#111;
+border:none;
+}
+
+#leadForm select{
+width:200px;
+padding:0 16px;
+background:#fff;
+color:#111;
+border:none;
+}
+
+#leadForm button{
+padding:0 24px;
+background:linear-gradient(90deg,#4b7cff,#6a5cff);
+border:none;
+color:white;
+font-weight:600;
+cursor:pointer;
+white-space:nowrap;
+}
+<!-- update -->
