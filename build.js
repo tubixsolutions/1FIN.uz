@@ -34994,8 +34994,8 @@
             pd[0]
             ? dd("")
             : sd < pd[1]
-              ? dd("work")
-              : dd("about");
+              ? dd("#work")
+              : dd("#about");
         },
         {
           passive: !0,
