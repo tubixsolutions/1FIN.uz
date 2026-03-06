@@ -4297,7 +4297,13 @@ font-weight:600;
 cursor:pointer;
 white-space:nowrap;
 }
-input, select {
-color: #000;
+input,
+select,
+textarea {
+color: #111;
+background: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+border-radius: 6px;
 }
 <!-- update -->
