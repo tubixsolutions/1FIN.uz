@@ -51,6 +51,8 @@
   </head>
 
   <body class="mobileS:overflow-hidden">
+    <span id="lang_toast_title" class="hidden">Yuborildi</span>
+    <span id="lang_toast_desc" class="hidden">So'rovingiz qabul qilindi. Tez orada bog'lanamiz.</span>
     <div class="FakeScroll"></div>
     <div class="gl"></div>
     <div class="Voile"></div>
@@ -59,8 +61,8 @@
     <div class="Menu" data-component="Menu">
       <nav>
         <a id="lang_about" href="/works" data-id="Work"
-          data-route="work">Bizning xizmatlar</a>
-        <a id="lang_work" href="/about" data-id="About" data-route="about">Biz
+          data-route="/">Bizning xizmatlar</a>
+        <a id="lang_work" href="/about" data-id="About" data-route="/">Biz
           haqimizda</a>
         <a
           class="selected"
@@ -568,16 +570,32 @@
                 </div>
                 <form
                   method="post"
-                  action="./index.html"
+                  action="/send-lead.php"
                   class="order-item__form form--js">
+                  <select
+                    aria-label="Xizmatlar turini tanlang"
+                    class="order-item__field field"
+                    name="service-type"
+                    required
+                    style="margin-bottom: 12px;">
+                    <option id="lang_service_type_placeholder" value="" selected disabled>
+                      Xizmatlar turini tanlang
+                    </option>
+                    <option id="lang_service_type_opt_accounting" value="buxgalteriya">Buxgalteriya</option>
+                    <option id="lang_service_type_opt_audit" value="audit">Audit</option>
+                    <option id="lang_service_type_opt_consulting" value="konsalting">Konsalting</option>
+                  </select>
                   <input
                     type="text"
                     class="order-item__field field phone-mask"
                     placeholder="+998"
                     name="field-number"
+                    inputmode="tel"
                     autocomplete="off"
+                    pattern="^\+998 \d{2} \d{3} \d{2} \d{2}$"
                     required
                     value="+998" />
+                  <input type="hidden" name="lang" id="lead_lang" value="uz" />
                   <button class="order-item__btn btn">
                     <span id="lang_btn"> Menga qo'ng'iroq qiling </span>
                   </button>
@@ -811,6 +829,175 @@
     <script
       src="https://cdn.jsdelivr.net/npm/micro-slider@1.0.9/dist/micro-slider.min.js"></script>
     <script src="./script.js"></script>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("lead") !== "ok") return;
+
+        const toast = document.createElement("div");
+        toast.setAttribute("role", "status");
+        toast.className =
+          "fixed z-[9999] right-4 top-4 md:right-8 md:top-8 max-w-[360px] w-[calc(100%-32px)] md:w-auto " +
+          "rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md px-4 py-3 text-white shadow-[0_10px_30px_rgba(0,0,0,0.35)]";
+
+        const toastTitleEl = document.getElementById("lang_toast_title");
+        const toastDescEl = document.getElementById("lang_toast_desc");
+        const toastTitle = (toastTitleEl && toastTitleEl.textContent) ? toastTitleEl.textContent.trim() : "Yuborildi";
+        const toastDesc = (toastDescEl && toastDescEl.textContent) ? toastDescEl.textContent.trim() : "So'rovingiz qabul qilindi. Tez orada bog'lanamiz.";
+
+        toast.innerHTML =
+          '<div class="flex items-start gap-3">' +
+          '<div class="mt-[2px] flex h-8 w-8 items-center justify-center rounded-xl bg-green-500/15 border border-green-500/25">' +
+          '<span class="text-green-300 text-lg leading-none">✓</span>' +
+          "</div>" +
+          '<div class="flex-1">' +
+          `<div class="font-semibold">${toastTitle}</div>` +
+          `<div class="text-white/70 text-sm mt-1">${toastDesc}</div>` +
+          "</div>" +
+          '<button aria-label="Close" class="ml-2 text-white/60 hover:text-white transition">' +
+          "×" +
+          "</button>" +
+          "</div>";
+
+        const closeBtn = toast.querySelector("button");
+        const close = () => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(-8px)";
+          setTimeout(() => toast.remove(), 220);
+        };
+
+        closeBtn.addEventListener("click", close);
+
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(-8px)";
+        toast.style.transition = "opacity 200ms ease, transform 200ms ease";
+
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+          toast.style.opacity = "1";
+          toast.style.transform = "translateY(0px)";
+        });
+
+        setTimeout(close, 5000);
+
+        params.delete("lead");
+        const newQuery = params.toString();
+        const newUrl = window.location.pathname + (newQuery ? `?${newQuery}` : "") + window.location.hash;
+        window.history.replaceState({}, "", newUrl);
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const PREFIX = "+998";
+
+        function onlyDigits(s) {
+          return (s || "").replace(/\D/g, "");
+        }
+
+        function formatUzPhone(raw) {
+          let digits = onlyDigits(raw);
+          if (digits.startsWith("998")) digits = digits.slice(3);
+          digits = digits.slice(0, 9);
+
+          let out = PREFIX;
+          if (digits.length > 0) out += " ";
+          if (digits.length <= 2) return out + digits;
+
+          out += digits.slice(0, 2);
+          if (digits.length > 2) out += " ";
+          if (digits.length <= 5) return out + digits.slice(2);
+
+          out += digits.slice(2, 5);
+          if (digits.length > 5) out += " ";
+          if (digits.length <= 7) return out + digits.slice(5);
+
+          out += digits.slice(5, 7);
+          if (digits.length > 7) out += " ";
+          out += digits.slice(7);
+
+          return out;
+        }
+
+        function ensurePrefix(el) {
+          if (!el.value || el.value.trim() === "") {
+            el.value = PREFIX;
+          }
+          if (!el.value.startsWith(PREFIX)) {
+            el.value = PREFIX;
+          }
+        }
+
+        document.querySelectorAll(".phone-mask").forEach((el) => {
+          ensurePrefix(el);
+
+          el.addEventListener("focus", () => {
+            ensurePrefix(el);
+            setTimeout(() => {
+              const pos = el.value.length;
+              el.setSelectionRange(pos, pos);
+            }, 0);
+          });
+
+          el.addEventListener("keydown", (e) => {
+            if ((e.key === "Backspace" || e.key === "Delete") && el.selectionStart <= PREFIX.length) {
+              e.preventDefault();
+              const pos = el.value.length;
+              el.setSelectionRange(pos, pos);
+            }
+          });
+
+          el.addEventListener("input", () => {
+            const formatted = formatUzPhone(el.value);
+            el.value = formatted;
+            const pos = el.value.length;
+            el.setSelectionRange(pos, pos);
+          });
+
+          el.addEventListener("paste", (e) => {
+            e.preventDefault();
+            const pasted = (e.clipboardData || window.clipboardData).getData("text");
+            el.value = formatUzPhone(pasted);
+            const pos = el.value.length;
+            el.setSelectionRange(pos, pos);
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const langInput = document.getElementById("lead_lang");
+        if (!langInput) return;
+
+        function getLanguage() {
+          const tabber = document.querySelector(".tabber");
+          const tabberValue = tabber && tabber.value ? String(tabber.value) : "";
+          if (tabberValue === "uz" || tabberValue === "ru") return tabberValue;
+
+          try {
+            const saved = window.localStorage.getItem("language");
+            if (saved === "uz" || saved === "ru") return saved;
+          } catch (e) {}
+
+          return "uz";
+        }
+
+        function sync() {
+          langInput.value = getLanguage();
+        }
+
+        sync();
+
+        const tabber = document.querySelector(".tabber");
+        if (tabber) tabber.addEventListener("change", sync);
+
+        const form = langInput.closest("form");
+        if (form) form.addEventListener("submit", sync);
+      })();
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
